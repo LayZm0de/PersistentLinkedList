@@ -62,7 +62,13 @@ public class Main {
 		}
 
 	}
-
+}
+	
+ 	/*
+	 * addNode() method is designed to allow 
+	 * the user to interactively add new nodes
+	 * to a linked list data structure using command line input.
+	 */
 	private static void addNode() throws NumberFormatException, IOException {
 		try {
 			System.out.print("Enter an integer number to add: ");
@@ -73,7 +79,12 @@ public class Main {
 			System.out.println("The only allowed input for CHOICE is an integer. Please try again.");
 		}
 	}
-
+	/*
+	 * deleteNode() method is designed to allow 
+	 * the user to interactively delete nodes 
+	 * from a linked list data structure
+	 * using command line input
+	 */
 	private static void deleteNode() throws NumberFormatException, IOException {
 		try {
 			System.out.print("Enter node position to delete: ");
@@ -87,7 +98,11 @@ public class Main {
 	private static void display() {
 		ll.display();
 	}
-
+	/*
+	 *this method is designed to allow the user 
+	 *to interactively change the value of a node 
+	 *in a linked list data structure
+	*/
 	private static void changeValue() throws NumberFormatException, IOException {
 		try {
 			System.out.print("Enter node position: ");
@@ -97,7 +112,13 @@ public class Main {
 			System.out.println("The only allowed input for CHOICE is an integer. Please try again.");
 		}
 	}
-
+	
+	/*
+	 * nodeHistory() method is designed to allow the 
+	 * user to interactively change the value 
+	 * of a node in a linked list data structure
+	 * using command line input.
+	 */
 	private static void nodeHistory() throws NumberFormatException, IOException {
 		try {
 			System.out.print("Enter node position: ");
