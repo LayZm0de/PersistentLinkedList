@@ -8,11 +8,11 @@ public class Main {
 
 	public static void main(String[] args) throws NumberFormatException, IOException, InterruptedException {
 		/*
-		 * The main method of the program.
-		 * If an error occurs while selecting an operation or while performing
-		 * an operation, the user will be brought back at the main menu to try again.
+		 * The main method of the program. If an error occurs while selecting an
+		 * operation or while performing an operation, the user will be brought back at
+		 * the main menu to try again.
 		 */
-		while(true) {
+		while (true) {
 			try {
 				System.out.println("\nMENU");
 				System.out.println("[1] Add Node");
@@ -24,7 +24,7 @@ public class Main {
 				System.out.println("[7] Exit");
 				System.out.print("Enter Choice: ");
 				int choice = Integer.parseInt(reader.readLine());
-				switch(choice) {
+				switch (choice) {
 				case 1:
 					addNode();
 					break;
@@ -51,8 +51,7 @@ public class Main {
 					}
 					System.out.print("\nProgram terminated.");
 					System.exit(0);
-					
-					
+
 				default:
 					System.out.println("Invalid choice. Please try again.");
 					break;
@@ -61,9 +60,9 @@ public class Main {
 				System.out.println("The only allowed input for CHOICE is an integer. Please try again.");
 			}
 		}
-		
+
 	}
-	
+
 	private static void addNode() throws NumberFormatException, IOException {
 		try {
 			System.out.print("Enter an integer number to add: ");
@@ -74,22 +73,21 @@ public class Main {
 			System.out.println("The only allowed input for CHOICE is an integer. Please try again.");
 		}
 	}
-	
+
 	private static void deleteNode() throws NumberFormatException, IOException {
 		try {
-			System.out.print("Enter an integer number to delete: ");
+			System.out.print("Enter node position to delete: ");
 			int number = Integer.parseInt(reader.readLine());
 			ll.deleteNode(number);
-			System.out.println("The node was successfully deleted!");
 		} catch (NumberFormatException e) {
 			System.out.println("The only allowed input for CHOICE is an integer. Please try again.");
 		}
 	}
-	
+
 	private static void display() {
 		ll.display();
 	}
-	
+
 	private static void changeValue() throws NumberFormatException, IOException {
 		try {
 			System.out.print("Enter node position: ");
@@ -99,7 +97,7 @@ public class Main {
 			System.out.println("The only allowed input for CHOICE is an integer. Please try again.");
 		}
 	}
-	
+
 	private static void nodeHistory() throws NumberFormatException, IOException {
 		try {
 			System.out.print("Enter node position: ");
@@ -109,11 +107,9 @@ public class Main {
 			System.out.println("The only allowed input for CHOICE is an integer. Please try again.");
 		}
 	}
-	
+
 	private static void listHistory() {
 		ll.listHistory();
 	}
-	
-	
-	
+
 }
