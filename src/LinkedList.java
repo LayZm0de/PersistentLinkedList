@@ -11,7 +11,13 @@ public class LinkedList {
 	public int version = 1;
 	public int length = 0;
 	public boolean indentifier = true;
-
+	
+	/*
+	 * This parameterized addNode method is designed to add
+	 * a new node to the end of the linked list, 
+	 * and update the length of the list 
+	 * and its history if necessary.
+	 */
 	public void addNode(int num) {
 		Node newNode = new Node(num);
 
@@ -30,19 +36,28 @@ public class LinkedList {
 			histories.add(copyLinkedList());
 
 	}
-
+	/*
+	 * Overall, this method is designed to delete a node 
+	 * from the linked list at the specified position, 
+	 * and handle errors gracefully if necessary.
+	 */
 	public void deleteNode(int num) {
 		if (num < 1 || num > length) {
 			System.out.println("Invalid Position");
 			return;
 		}
-
+		
+		/*
+		 * this is designed to delete a node from the linked list 
+		 * at the specified position, update the necessary links, 
+		 * and keep track of past states of the list.
+		 */
 		LinkedList pastll;
 		Node cur = head;
 		Node temp = null;
 
 		int nodeCnt = 1;
-
+		
 		while (num != nodeCnt) {
 			cur = cur.getNext();
 			nodeCnt++;
@@ -79,6 +94,14 @@ public class LinkedList {
 
 	}
 
+	/*
+	 * This method creates and returns a copy of the current linked list.
+	 * It creates a new LinkedList object,
+	 * iterates over the nodes of the current list 
+	 * and adds them to the new list one by one, and then returns the new list.
+ 	 * The version number of the new list is incremented by 1.
+	 * @return a copy of the current linked list.
+	 */
 	public LinkedList copyLinkedList() {
 		LinkedList ll = new LinkedList();
 		ll.indentifier = false;
@@ -95,7 +118,13 @@ public class LinkedList {
 		return ll;
 
 	}
-
+	
+	/*
+	 * Modifies the value of a node at a given position 
+	 * and updates the history of the linked list.
+	 * @param num the position of the node to modify
+	 * @throws IOException if there is an error in the input stream
+	 */
 	public void changeValue(int num) throws IOException {
 		if (num < 1 || num > length) {
 			System.out.println("Invalid Position");
@@ -123,7 +152,11 @@ public class LinkedList {
 		histories.add(copyLinkedList());
 		System.out.println("Node value has been modified successfully!");
 	}
-
+	
+	/*
+	 * Retrieves the history of a specific node by its position in the linked list.
+	 * @param num the position of the node to retrieve history from.
+	 */
 	public void nodeHistory(int num) {
 		if (num < 1 || num > length) {
 			System.out.println("Invalid Position");
@@ -132,7 +165,7 @@ public class LinkedList {
 
 		Node cur = head;
 		int nodeCnt = 1;
-
+	
 		while (num != nodeCnt) {
 			cur = cur.getNext();
 			nodeCnt++;
@@ -151,7 +184,13 @@ public class LinkedList {
 			}
 		}
 	}
-
+	
+	/*
+	 * This method displays the history of the linkedlist along with the recent values of deleted nodes.
+	 * the method checks each state in the histories list for any deleted nodes and prints the version number
+	 * and recent value of each deleted node found. If no deleted nodes are found
+	 * the method prints a message indicating that no nodes were deleted.
+	 */ 
 	public void listHistory() {
 		Boolean haveDeletedNodes = false;
 
